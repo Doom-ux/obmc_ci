@@ -20,7 +20,7 @@ pipeline {
 
         #curl -k -u root:0penBmc https://127.0.0.1:2443/redfish/v1/
         pytest --disable-warnings /home/dima/agent/workspace/obmc_webui/tests/test_obmc1.py
-        pytest --disable-warnings -rf home/dima/agent/workspace/obmc_webui/tests/test_redfish.py
+        pytest --disable-warnings -rf /home/dima/agent/workspace/obmc_webui/tests/test_redfish.py
         '''
       }
     }
