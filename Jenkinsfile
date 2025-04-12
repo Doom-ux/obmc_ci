@@ -16,7 +16,7 @@ pipeline {
             echo "QEMU exited unexpectedly."
             exit 1
         fi
-        sleep 15s
+        sleep 85s
 
         curl -k -u root:0penBmc https://127.0.0.1:2443/redfish/v1/
         #pytest --disable-warnings /home/dima/agent/workspace/obmc_webui/tests/test_obmc1.py
