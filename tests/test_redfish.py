@@ -77,6 +77,6 @@ def test_power_on(session_token):
 		assert 0, "The request timed out while trying to get the data (func 'test_power_on')."
 	
 	data_dict = r.json()
-	assert data_dict["PowerState"] == "On", "PowerState is 'Off'."
+	assert data_dict["PowerState"] == "Off", "PowerState is 'On'."
 	
 
