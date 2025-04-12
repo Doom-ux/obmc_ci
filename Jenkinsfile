@@ -5,6 +5,7 @@ pipeline {
   }
   stages {
     stage("Test") {
+      agent any
       steps {
         sh """
         . /venv_obmc/bin/activate
