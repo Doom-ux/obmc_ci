@@ -26,8 +26,8 @@ pipeline {
     }
   }
   post {
+    agent any
     always {
-      agent any
       junit '/home/dima/agent/workspace/obmc_webui/reports/*.xml'
     }
   }
