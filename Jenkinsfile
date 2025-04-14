@@ -1,5 +1,5 @@
 pipeline {
-  agent none
+  agent any
   options {
     buildDiscarder(logRotator(numToKeepStr:'10', artifactNumToKeepStr:'10', daysToKeepStr:'20', artifactDaysToKeepStr:'20'))
   }
@@ -26,7 +26,6 @@ pipeline {
     }
   }
   post {
-    agent any
     always {
       junit '/home/dima/agent/workspace/obmc_webui/reports/*.xml'
     }
