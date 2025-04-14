@@ -26,7 +26,7 @@ pipeline {
   }
   post {
     success {
-      junit '${WORKSPACE}/reports/*.xml'
+      junit '**/reports/*.xml'
     }
   }
 }
