@@ -4,6 +4,8 @@ import json
 from json import JSONDecodeError
 import requests
 from requests.exceptions import HTTPError, ConnectionError, Timeout
+from requests.packages import urllib3
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 session_resp = None
 
