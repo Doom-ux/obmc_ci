@@ -25,4 +25,9 @@ pipeline {
       }
     }
   }
+  post {
+    always {
+      junit '/home/dima/agent/workspace/obmc_webui/reports/*.xml'
+    }
+  }
 }
