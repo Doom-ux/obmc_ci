@@ -5,7 +5,6 @@ pipeline {
   }
   stages {
     stage("Test") {
-      agent any
       steps {
         sh '''
         . /venv_obmc/bin/activate
@@ -26,7 +25,7 @@ pipeline {
     }
   }
   post {
-    always {
+    success {
       junit '/home/dima/agent/workspace/obmc_webui/reports/*.xml'
     }
   }
