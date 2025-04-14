@@ -27,7 +27,7 @@ pipeline {
           alwaysLinkToLastBuild: false,
           keepAll: true,
           reportDir: 'reports',
-          reportFile: 'obmc_load',
+          reportFile: 'obmc_load.html',
           reportName: 'OpenBMC load test'
         ]
       }
