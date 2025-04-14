@@ -22,14 +22,6 @@ pipeline {
         pytest --junit-xml="/home/dima/agent/workspace/obmc_webui/reports/test_redfish.xml" --disable-warnings -rf /home/dima/agent/workspace/obmc_webui/tests/test_redfish.py
         locust -f /home/dima/agent/workspace/obmc_webui/tests/locustfile.py --headless --users 60 --spawn-rate 30 --run-time 10s --stop-timeout 20s --host https://127.0.0.1:2443 --html /home/dima/agent/workspace/obmc_webui/reports/obmc_load.html --exit-code-on-error 0
         '''
-        publishHTML target: [
-          allowMissing: false,
-          alwaysLinkToLastBuild: false,
-          keepAll: true,
-          reportDir: 'reports',
-          reportFiles: 'obmc_load.html',
-          reportName: 'OpenBMC locust test'
-        ]
       }
     }
   }
