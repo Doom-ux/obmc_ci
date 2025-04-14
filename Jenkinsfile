@@ -26,7 +26,7 @@ pipeline {
   }
   post {
     success {
-      junit '/home/dima/agent/workspace/obmc_webui/reports/*.xml'
+      junit '${WORKSPACE}/reports/*.xml'
     }
   }
 }
