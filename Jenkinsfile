@@ -20,8 +20,16 @@ pipeline {
         #curl -k -u root:0penBmc https://127.0.0.1:2443/redfish/v1/
         pytest --junit-xml="/home/dima/agent/workspace/obmc_webui/reports/test_obmc.xml" --disable-warnings /home/dima/agent/workspace/obmc_webui/tests/test_obmc1.py
         pytest --junit-xml="/home/dima/agent/workspace/obmc_webui/reports/test_redfish.xml" --disable-warnings -rf /home/dima/agent/workspace/obmc_webui/tests/test_redfish.py
-        locust -f /home/dima/agent/workspace/obmc_webui/tests/locustfile.py --headless --users 60 --spawn-rate 30 --run-time 3m --html /home/dima/agent/workspace/obmc_webui/reports/obmc_load
+        locust -f /home/dima/agent/workspace/obmc_webui/tests/locustfile.py --headless --users 60 --spawn-rate 30 --run-time 3m --host https://127.0.0.1:2443 --html /home/dima/agent/workspace/obmc_webui/reports/obmc_load
         '''
+        publishHTML target: [
+          allowMissing: false,
+          alwaysLinkToLastBuild: false,
+          keepAll: true,
+          reportDir: 'reports',
+          reportFile: 'obmc_load',
+          reportName: 'OpenBMC load test'
+        ]
       }
     }
   }
