@@ -20,7 +20,7 @@ pipeline {
         #curl -k -u root:0penBmc https://127.0.0.1:2443/redfish/v1/
         pytest --junit-xml="/home/dima/agent/workspace/obmc_webui/reports/test_obmc.xml" --disable-warnings /home/dima/agent/workspace/obmc_webui/tests/test_obmc1.py
         pytest --junit-xml="/home/dima/agent/workspace/obmc_webui/reports/test_redfish.xml" --disable-warnings -rf /home/dima/agent/workspace/obmc_webui/tests/test_redfish.py
-        locust -f /home/dima/agent/workspace/obmc_webui/tests/locustfile.py --headless --users 20 --spawn-rate 5 --run-time 3m --stop-timeout 20s --host https://127.0.0.1:2443 --html /home/dima/agent/workspace/obmc_webui/reports/obmc_load.html --exit-code-on-error 0
+        locust -f /home/dima/agent/workspace/obmc_webui/tests/locustfile.py --headless --users 20 --spawn-rate 5 --run-time 3m --stop-timeout 20s --host https://127.0.0.1:2443 --html /home/dima/agent/workspace/obmc_webui/reports/obmc_load.html --exit-code-on-error 0 --json --skip-log > /home/dima/agent/workspace/obmc_webui/reports/obmc_load.json
         '''
       }
     }
